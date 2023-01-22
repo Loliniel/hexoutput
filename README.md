@@ -1,22 +1,28 @@
+# hexoutput
+
+
 hexoutput is a simple function in C to accept a file and output it's contents as in a readable hexadecimal format.  For example a .png file will show as the following.  These are only the first 256 bytes from the .png file.  The file can be compiled with the supplied Makefile.
 
+## Installation
+Just a simple Makefile
+```bash
+make
+```
 
+## Usage
+To view information on usage.
+```bash
+hex -h
+```
 
-OBJS		= hex.c
-OBJ_NAME	= hex.exe
-CC			= /bin/gcc
+To show the hex output of the example file, lita.png
+```bash
+hex -f lita.png
+```
 
+## Sample output of the first 256 bytes from the example file.
 
-all: $(OBJS)
-	$(CC) $(OBJS) -o $(OBJ_NAME) -Wall
-
-clean:
-	rm hex.exe
-	
-	
-	
-Sample output.
-
+```bash
 00000000 89 50 4E 47 0D 0A 1A 0A 00 00 00 0D 49 48 44 52 ‰PNG........IHDR
 00000010 00 00 02 BC 00 00 02 BC 08 02 00 00 00 82 D8 FB ...¼...¼.....‚Øû
 00000020 14 00 00 00 01 73 52 47 42 00 AE CE 1C E9 00 00 .....sRGB.®Î.é..
@@ -34,3 +40,4 @@ Sample output.
 000000E0 EF B9 E7 9E 23 BD 76 ED DA 91 E2 90 47 9F 79 E6 ï¹çž#½víÚ‘âGŸyæ
 000000F0 99 41 1F 78 E0 81 E3 F8 E9 A7 9F 1E 94 B6 2F 7C ™Axàãøé§Ÿ.”¶/|
 00000100 E1 0B 47 FA E0 83 0F 0E 0A D5 6C D5 53 4F 3D 35 á.Gúàƒ...ÕlÕSO=5
+```
